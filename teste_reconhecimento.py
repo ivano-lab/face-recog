@@ -9,7 +9,8 @@ def verificar_faces(caminho_foto1, caminho_foto2):
         resultado = DeepFace.verify(
             img1_path = caminho_foto1, 
             img2_path = caminho_foto2,
-            enforce_detection = True # Garante que o código vai falhar se não achar um rosto
+            enforce_detection = True,
+            detector_backend = "retinaface"
         )
         
         # O resultado é um dicionário com vários dados. Vamos formatar para ficar bonito.
@@ -35,4 +36,4 @@ def verificar_faces(caminho_foto1, caminho_foto2):
 # Executa o teste apontando para os seus arquivos locais
 if __name__ == "__main__":
     # Substitua pelos nomes dos seus arquivos de teste
-    verificar_faces("foto1.jpg", "foto2.jpg")
+    verificar_faces("IMG_20260618_100718.jpg", "IMG_20260618_100723.jpg")
